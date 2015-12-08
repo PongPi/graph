@@ -1,0 +1,21 @@
+{
+  "name": "themes",
+  "homepage": "https://github.com/PongPi/graph",
+  "authors": [
+    "Pong Pi <eroshaly@gmail.com>"
+  ],
+  "description": "",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  },
+  "main": "",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
