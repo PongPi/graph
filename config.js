@@ -53,9 +53,9 @@ config = {
         database: {
             client: 'mysql',
               connection: {
-                host     : '127.0.0.1',
+                host     : 'npm install',
                 user     : 'root',
-                password : '',
+                password : '140690',
                 database : 'graph-dev',
                 charset  : 'utf8'
               }
