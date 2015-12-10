@@ -726,7 +726,7 @@ line-height: 40px;
 #sidebar-popular-post li img, 
 #sidebar-older-post li img{
 	width: 65px;
-	height: 65px;
+	/*height: 65px;*/
 	float: left;
 	margin-right: 8px;
 }
@@ -956,7 +956,7 @@ line-height: 40px;
 }
 #ccr-footer-sidebar .col-md-3 li img{
 	width: 65px;
-	height: 65px;
+	/*height: 65px;*/
 	float: left;
 	margin-right: 10px;
 }
@@ -1137,64 +1137,64 @@ line-height: 40px;
 
 /* 7.4 - ccr-sports-gallery 
 ---------------------------------------------------------------------- */
-#ccr-sports-gallery{
+.ccr-sports-gallery{
 	overflow: hidden;
 }
-#ccr-sports-gallery .featured-sports-news{
+.ccr-sports-gallery .featured-sports-news{
 	margin-top:20px;
-	height:504px;
+	/*height:504px;*/
 	width: 48.5%;
 	float: left;
 }
-#ccr-sports-gallery .featured-sports-news img{
+.ccr-sports-gallery .featured-sports-news img{
 	width: 100%;
 }
-#ccr-sports-gallery .featured-sports-news-img {
+.ccr-sports-gallery .featured-sports-news-img {
 	height:252px;
 }
-#ccr-sports-gallery .featured-sports-news-post{
+.ccr-sports-gallery .featured-sports-news-post{
 	border-bottom: 1px solid #ccc;
 	margin-top:20px;
 	position: relative;
 	height:252px;
 }
-#ccr-sports-gallery h5{
+.ccr-sports-gallery h5{
 	line-height: 20px;
 	font-size: 1.2em;
 }
-#ccr-sports-gallery .featured-sports-news-post h5{
+.ccr-sports-gallery .featured-sports-news-post h5{
 	margin-bottom: 10px;
 	font-weight: 700;
 }
-#ccr-sports-gallery  .like-comment-readmore{
+.ccr-sports-gallery  .like-comment-readmore{
 	position: absolute;
 	bottom: 0;
 	margin-bottom:10px;
 	width: 100%;
 }
-#ccr-sports-gallery ul{
+.ccr-sports-gallery ul{
 	width: 100%;
 	margin-top: 10px;
 }
-#ccr-sports-gallery li{
+.ccr-sports-gallery li{
 	width: 22.75%;
 	float: left;
 	margin: 20px 0;
 }
-#ccr-sports-gallery li h5 a{
+.ccr-sports-gallery li h5 a{
 	font-weight: 400;
 	display: inline-block;
 	width: 100%;
 }
-#ccr-sports-gallery li:nth-child(-n+2){
+.ccr-sports-gallery li:nth-child(-n+2){
 	margin-top: 10px;
 }
-#ccr-sports-gallery li:nth-child(-n+5):nth-child(odd),
-#ccr-sports-gallery li:nth-child(-n+6):nth-child(even),
-#ccr-sports-gallery li:nth-child(n+8){
+.ccr-sports-gallery li:nth-child(-n+5):nth-child(odd),
+.ccr-sports-gallery li:nth-child(-n+6):nth-child(even),
+.ccr-sports-gallery li:nth-child(n+8){
 	margin-left: 3%;
 }
-#ccr-sports-gallery li img{
+.ccr-sports-gallery li img{
 	width: 100%;
 }
 /* 7.0 Hope Page End
@@ -1402,7 +1402,7 @@ line-height: 40px;
 	padding-top: 35%;
 }
 #ccr-category-1 img{
-	max-height: 250px;
+	/*max-height: 250px;*/
 }
 #ccr-category-1 li{
 	width: 48.5%;
@@ -1878,7 +1878,7 @@ line-height: 40px;
 	#ccr-world-news .featured-world-news-post h5{
 		margin-top: 15px;
 	} 
-	#ccr-sports-gallery .featured-sports-news{
+	.ccr-sports-gallery .featured-sports-news{
 		width: 100%;
 		float: none;
 		height:auto;
@@ -1892,7 +1892,7 @@ line-height: 40px;
 	}
 	#ccr-article-related-post li,
 	#ccr-world-news li,
-	#ccr-sports-gallery li,
+	.ccr-sports-gallery li,
 	#ccr-latest-post-gallery li,
 	#ccr-categpry-latest-post li{
 		width: 100%;
@@ -1900,16 +1900,16 @@ line-height: 40px;
 		padding: 3px 0;
 	}
 	#ccr-world-news li,
-	#ccr-sports-gallery li{
+	.ccr-sports-gallery li{
 		margin: 0;
 	}
-	#ccr-sports-gallery li:nth-child(-n+2){
+	.ccr-sports-gallery li:nth-child(-n+2){
 	margin-top: 0;
 	}
-	#ccr-sports-gallery li:nth-child(-n+2),
-	#ccr-sports-gallery li:nth-child(-n+5):nth-child(odd),
-	#ccr-sports-gallery li:nth-child(-n+6):nth-child(even),
-	#ccr-sports-gallery li:nth-child(n+8),
+	.ccr-sports-gallery li:nth-child(-n+2),
+	.ccr-sports-gallery li:nth-child(-n+5):nth-child(odd),
+	.ccr-sports-gallery li:nth-child(-n+6):nth-child(even),
+	.ccr-sports-gallery li:nth-child(n+8),
 	#ccr-latest-post-gallery li:nth-child(3n+3), 
 	#ccr-latest-post-gallery li:nth-child(3n+2),
 	#ccr-categpry-latest-post li:nth-child(3n+2),
@@ -1927,7 +1927,7 @@ line-height: 40px;
 	}
 	#ccr-article-related-post li h5 a,
 	#ccr-world-news li h5 a,
-	#ccr-sports-gallery li h5 a,
+	.ccr-sports-gallery li h5 a,
 	#ccr-latest-post-gallery  li h4 a,
 	#ccr-categpry-latest-post a{
 		padding: 0 10px;
@@ -1936,7 +1936,7 @@ line-height: 40px;
 	}
 	#ccr-article-related-post li h5 a:hover,
 	#ccr-world-news li h5 a:hover,
-	#ccr-sports-gallery li h5 a:hover,
+	.ccr-sports-gallery li h5 a:hover,
 	#ccr-latest-post-gallery  li h4 a:hover,
 	#ccr-categpry-latest-post a:hover{
 		color: #FFF;

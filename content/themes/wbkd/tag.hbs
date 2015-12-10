@@ -1,18 +1,59 @@
 {{!< default}}
 {{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
 
-{{> "header"}}
+
 
 {{! The main content area on the homepage }}
 <main id="content" class="content clearfix" role="main">
 
     <div id="articles">
         {{! The tag below includes the post loop - partials/loop.hbs }}
-        {{> "loop"}}
+        {{! > "loop"}}
+        <section id="ccr-category-1">
+                {{#foreach posts}}
+                        {{#if @first}}
+                        <div class="ccr-category-featured">
+                        <div class="ccr-thumbnail">
+                            <img src="{{image}}" alt="{{{title}}}">
+                        </div>
+                        <article>
+                        <h4><a href="{{url}}">{{{title}}}</a></h4>
+                            {{excerpt words="25"}}...
+                            <div class="like-comment-readmore">
+                                
+                                    <!--a href="#" class="like"><i class="fa fa-thumbs-o-up"></i> 08</a-->
+                                    <!--a href="#" class="comments"><i class="fa fa-comments-o"></i> 49</a-->
+                                
+                                    <a class="read-more" href="{{url}}">Xem thêm</a>
+                            </div> <!-- /.like-comment-readmore -->
+                        </article>
+                    </div>
+                    {{/if}}
+                {{/foreach}}
+                    
+
+
+                    
+
+
+            <ul class="ccr-category-post">
+                    {{#foreach posts}}
+                        {{^if @first}}
+                        <li>
+                            <div class="ccr-thumbnail">
+                                <img src="{{image}}" alt="{{{title}}}">
+                                <p><a href="{{url}}">Xem thêm</a></p>
+                            </div>
+                            <h5><a href="{{url}}">{{{title}}}</a></h5>
+                        </li>
+                        {{/if}}
+                        
+                    {{/foreach}}
+                    </ul>
+                    
+                    </section>
     </div>
 
-    <div id="sidebar">
-        {{> "sidebar"}}
-    </div>
+
 
 </main>
