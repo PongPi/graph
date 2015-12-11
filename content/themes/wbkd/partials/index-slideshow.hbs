@@ -30,8 +30,9 @@
                                 <div class="container slide-element">
                                     <!-- <img src="img/slide/main-slide-1.jpg" alt="Main Slide Image 1"> -->
                                     {{#if image}}
-                                    <img src="{{image}}" alt="{{{title}}}">
-                                        <!-- <section class="post-image" style="background-image:url({{image}})"></section> -->
+                                    <div class="slide-element-image">
+                                        <img src="{{image}}" alt="{{{title}}}">
+                                    </div>  
                                     {{/if}}
 
                                     <p><a href="{{url}}">{{{title}}}</a></p>

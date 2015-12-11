@@ -7,8 +7,9 @@
                 {{#get "posts" limit="5" include="author,tags" filter="featured:true" order="updated_at desc"}}
                     {{#foreach posts}}
                     <li>
-
+                        <div class="sidebar-image">
                         <img src="{{image}}" alt="{{{title}}}">
+                        </div>
                         <a href="{{url}}">{{{title}}}</a>
                         <!--div class="date-like-comment">
                             <span class="date"><time datetime="2014-02-17">2014-02-17</time></span>
