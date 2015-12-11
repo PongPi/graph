@@ -3,7 +3,7 @@
                 <span></span> 
                 <p>12 CHÒM SAO</p>
         </div> <!-- .ccr-gallery-ttile -->
-        {{#get "posts" limit="1" include="author,tags" filter="tags.slug:'12-chom-sao'" order="updated_at desc"}}
+        {{#get "posts" limit="1" include="author,tags" filter="tags.slug:'mat-ngu-12-chom-sao'" order="updated_at desc"}}
             {{#foreach posts}}
                 {{> "featuredMain"}}
             {{/foreach}}
@@ -11,7 +11,7 @@
         
 
         <ul>
-            {{#get "posts" limit="7" include="author,tags" filter="tags.slug:'12-chom-sao'" order="updated_at desc"}}
+            {{#get "posts" limit="7" include="author,tags" filter="tags.slug:'mat-ngu-12-chom-sao'" order="updated_at desc"}}
                 {{#foreach posts}}
 
                 {{^if @first}}
