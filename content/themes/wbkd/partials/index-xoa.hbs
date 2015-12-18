@@ -1,0 +1,26 @@
+    <section class="ccr-sports-gallery">
+        <div class="ccr-gallery-ttile">
+                <span></span> 
+                <p>XÕA</p>
+        </div> <!-- .ccr-gallery-ttile -->
+        {{#get "posts" limit="1" include="author,tags" filter="tags.slug:'xoa'" order="updated_at desc"}}
+            {{#foreach posts}}
+                {{> "featuredMain"}}
+            {{/foreach}}
+        {{/get}}
+        
+
+        <ul>
+            {{#get "posts" limit="7" include="author,tags" filter="tags.slug:'xoa'" order="updated_at desc"}}
+                {{#foreach posts}}
+
+                {{^if @first}}
+                    {{> "featuredItem"}}                    
+                {{/if}}
+                {{/foreach}}
+            {{/get}}
+            
+            
+        </ul>                   
+    
+    </section> <!-- /#  -->

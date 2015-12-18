@@ -1,0 +1,23 @@
+<article id="ccr-article">
+                <h1><a href="{{url}}">{{{title}}}</a></h1>
+
+                <div class="article-like-comment-date"> 
+                    Đăng ngày <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD/MM/YYYY"}}</time>
+                    <span class="author">, bởi {{author}}</span>
+
+                    <!-- <a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a> -->
+                    <!-- <a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a> -->
+                                        
+                </div> <!-- /.article-like-comment-date -->
+
+                {{#if image}}
+       
+                    <img src="{{image}}" class="post-image"/>
+                
+                {{/if}}
+                
+                <section class="post-content">
+            {{content}}
+        </section>
+
+</article>

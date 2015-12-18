@@ -1,0 +1,73 @@
+<div class="ccr-last-update">
+        <div class="update-ribon">Tin mới</div> <!-- /.update-ribon -->
+        <span class="update-ribon-right"></span> <!-- /.update-ribon-left -->
+        <div class="update-news-text" id="update-news-text">
+                <ul id="latestUpdate">  
+                    {{#get "posts" limit="4" include="author,tags" order="updated_at desc"}}
+                            {{#foreach posts}}
+                                <li><a href="{{url}}">{{{title}}}</a></li>
+                                 
+                            {{/foreach}}
+                        {{/get}}
+
+                </ul>
+        </div> <!-- /.update-text -->
+
+        <div class="update-right-border"></div> <!-- /.update-right-border -->
+    </div>
+    <section id="ccr-slide-main" class="carousel slide" data-ride="carousel">               
+                    
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+                    {{#get "posts" limit="4" include="author,tags" order="updated_at desc"}}
+                        {{#foreach posts}}
+                            {{#if @first}}
+                                <div class="item active" >
+                            {{else}}
+                                <div class="item">
+                            {{/if}}
+                            
+                                <div class="container slide-element">
+                                    <!-- <img src="img/slide/main-slide-1.jpg" alt="Main Slide Image 1"> -->
+                                    {{#if image}}
+                                    <div class="slide-element-image">
+                                        <img src="{{image}}" alt="{{{title}}}">
+                                    </div>  
+                                    {{/if}}
+
+                                    <p><a href="{{url}}">{{{title}}}</a></p>
+                                </div> <!-- /.slide-element -->
+                            </div> <!--/.active /.item -->
+
+                            
+                        {{/foreach}}
+                    {{/get}}
+
+
+
+                        
+
+                        
+                    </div> <!-- /.carousel-inner -->
+                    
+                    <!-- slider nav -->
+                    <a class="carousel-control left" href="#ccr-slide-main" data-slide="prev"><i class="fa fa-arrow-left"></i></a>
+                    <a class="carousel-control right" href="#ccr-slide-main" data-slide="next"><i class="fa fa-arrow-right"></i></a>
+
+                    <ol class="carousel-indicators">
+                        {{#get "posts" limit="4" include="author,tags" order="updated_at desc"}}
+                            {{#foreach posts}}
+                                {{#if @first}}
+                                    <li data-target="#ccr-slide-main" data-slide-to="{{@index}}" class="active"></li>
+                                {{else}}
+                                    <li data-target="#ccr-slide-main" data-slide-to="{{@index}}" class=""></li>
+                                {{/if}}
+                                 
+                            {{/foreach}}
+                        {{/get}}
+                       
+                        
+                    </ol> <!-- /.carousel-indicators -->
+
+                            
+            </section>
