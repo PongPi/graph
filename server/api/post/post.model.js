@@ -1,0 +1,37 @@
+'use strict';
+
+var Model = require('../../config/model');
+var checkit  = require('checkit');
+var Promise  = require('bluebird');
+var User = require('../account/account.model');
+
+
+var rules = {
+    // name: 'required',
+};
+
+var Post = Model.extend({
+    tableName: 'posts',
+    idAttribute: 'id',
+    
+    initialize: function() {
+        this.on('saving', this.validateSave);
+    },
+
+    validateSave: function() {
+        return checkit(rules).run(this.attributes);
+    },
+    tags: function() {
+        
+        return this.belongsToMany(require('../tag/tag.model'));
+    },
+    author: function() {
+        return this.belongsTo(User,'author_id');
+    }
+
+})
+
+
+
+
+module.exports = Post;
