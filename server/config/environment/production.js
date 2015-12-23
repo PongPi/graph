@@ -14,17 +14,17 @@ module.exports = {
             8080,
 
   // MongoDB connection options
-  // mongo: {
-  //   uri:    process.env.MONGOLAB_URI ||
-  //           process.env.MONGOHQ_URL ||
-  //           process.env.OPENSHIFT_MONGODB_DB_URL+process.env.OPENSHIFT_APP_NAME ||
-  //           'mongodb://localhost/go1636node'
-  // }
+  mongo: {
+    uri:    process.env.MONGOLAB_URI ||
+            process.env.MONGOHQ_URL ||
+            process.env.OPENSHIFT_MONGODB_DB_URL+process.env.OPENSHIFT_APP_NAME ||
+            'mongodb://localhost/go1636node'
+  },
   db: {
         host     : 'localhost',
         user     : 'root',
         password : '',
-        database : 'graph-dev-1',
-        charset  : 'utf8'
+        database : 'graph-dev-2',
+        charset  : 'UTF8_BIN'
     }
 };

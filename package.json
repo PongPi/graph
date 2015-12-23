@@ -38,7 +38,7 @@
     "isarray": "0.0.1",
     "jsonwebtoken": "^5.0.0",
     "knex": "^0.9.0",
-    "lodash": "~2.4.1",
+    "lodash": "^3.10.1",
     "method-override": "~1.0.0",
     "moment": "^2.10.6",
     "moment-timezone": "^0.4.0",

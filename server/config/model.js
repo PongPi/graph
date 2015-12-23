@@ -5,7 +5,8 @@ var Promise = require('bluebird');
 
 var knex = require('knex')({
   client: 'mysql',
-  connection: config.db
+  connection: config.db,
+  debug: ['ComQueryPacket']
 });
 
 var bookshelf = require('bookshelf')(knex);

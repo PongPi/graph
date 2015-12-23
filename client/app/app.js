@@ -1,6 +1,6 @@
 'use strict';
 
-var graphNewsApp = angular.module('graphNewsApp', [
+var go1636app = angular.module('graphNewsApp', [
         'ngCookies',
         'ngResource',
         'ngSanitize',
@@ -45,7 +45,7 @@ var graphNewsApp = angular.module('graphNewsApp', [
                 responseError: function (response) {
                     if (response.status == 401) {
                         if($rootScope.isHome !== true){
-                            $location.path('/login');
+                            //$location.path('/login');
                             // remove any stale tokens
                             $cookieStore.remove('token');
                         }
@@ -58,7 +58,7 @@ var graphNewsApp = angular.module('graphNewsApp', [
                 }
             };
         })
-        .run(function ($rootScope, $location, $cookieStore, Auth, Helper,$translate,$translateLocalStorage) {
+        .run(function ($rootScope, $location, $cookieStore, Auth, $translate,$translateLocalStorage) {
             // Redirect to login if route requires auth and you're not logged in
             $rootScope.$on('$routeChangeStart', function (event, next) {
                 // $rootScope.isLoggedIn = Auth.isLoggedIn;
@@ -72,10 +72,12 @@ var graphNewsApp = angular.module('graphNewsApp', [
                 // Auth.isLoggedInAsync(function (loggedIn) {
                 //     if (next.authenticate && !loggedIn) {
                 //         event.preventDefault();
+                //         //$location.path('/login');
                 //     } else {
                 //         if ($cookieStore.get('token')) {
                 //             if ($location.path().indexOf('/login') !== -1) {
                 //                 event.preventDefault();
+                //                 //$location.path('/student-profile/personal');
                 //             }
                 //         }
                 //     }
@@ -87,10 +89,16 @@ function activeMenu($rootScope, $location) {
     var path = $location.path();
 
     // switch (path) {
-    //     case "/my-sessions":
-    //         $rootScope.title = "My Ongoing Programs";
-    //         $rootScope.isMenuActived = 4;
+    //     case "/mentor/availability":
+    //         $rootScope.title = "Mentor availability";
+    //         $rootScope.isMenuActived = 3;
     //         break;
+    //     case "/mentor/dashboard":
+    //         $rootScope.title = "Mentor Dashboard";
+
+    //         break;
+    //     case "/student/dashboard":
+    //         $rootScope.title = "My Progress";
     // }
 
 }

@@ -1,3 +1,101 @@
-<div class="col-md-12">
-This is the index view.
-</div>
+
+
+            
+
+            <div class="ccr-last-update">
+                <div class="update-ribon">TIN MỚi</div> <!-- /.update-ribon -->
+                <span class="update-ribon-right"></span> <!-- /.update-ribon-left -->
+                <div class="update-news-text" id="update-news-text">
+                        <ul id="latestUpdate">  
+                            <li ng-repeat="recent in recents" ng-class="{'active': $index === 0}" ng-if="$index < 4"><a href="#" >{{recent.title}}</a></li>
+                        </ul>
+                </div> <!-- /.update-text -->
+
+                <div class="update-right-border"></div> 
+                <!-- /.update-right-border -->
+            </div> <!-- / .ccr-last-update -->
+            <div class="row">
+
+            <section id="ccr-slide-main" class="carousel slide col-md-10" data-ride="carousel">               
+                    
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+                        <div class=" item" ng-repeat="recent in recents" ng-class="{'active': $index === 0}" ng-if="$index < 4">
+                            <div class="container slide-element">
+                                <img ng-src="{{recent.image}}" alt="{{recent.title}}">
+                                <p><a href="#">{{recent.title}}</a></p>
+                            </div> <!-- /.slide-element -->
+                        </div> <!--/.active /.item -->                   
+                    </div> <!-- /.carousel-inner -->
+                    
+                    <!-- slider nav -->
+                    <a class="carousel-control left" href="#ccr-slide-main" data-slide="prev"><i class="fa fa-arrow-left"></i></a>
+                    <a class="carousel-control right" href="#ccr-slide-main" data-slide="next"><i class="fa fa-arrow-right"></i></a>
+
+                    <ol class="carousel-indicators">
+                        <li data-target="#ccr-slide-main" data-slide-to="0" class="" ng-repeat="recent in recents" ng-class="{'active': $index === 0}" ng-if="$index < 4">{{$index}}</li>                        
+                    </ol> <!-- /.carousel-indicators -->
+
+                            
+            </section><!-- /#ccr-slide-main -->
+            </div>
+                <section class="ccr-sports-gallery" ng-repeat="section in sections">
+                    <div class="ccr-gallery-ttile">
+                            <span></span> 
+                            <p>{{section.name}}</p>
+                    </div> <!-- .ccr-gallery-ttile -->
+                    <div class="row">
+                    <section class="featured-sports-news col-md-6">
+                        <div class="featured-sports-news-img">
+                            <img ng-src="{{section.posts[0].image}}" alt="{{section.posts[0].title}}">
+                        </div>
+                        <div class="featured-sports-news-post">
+                        <h5>{{section.posts[0].title}}</h5>
+                        <p><span class="glyphicon glyphicon-user
+glyphicon "></span> <strong>{{section.posts[0].author_name}}</strong> - <i>{{section.posts[0].published_at | date : 'd/M/yy'}}</i></p>
+                        <p>{{section.posts[0].title}}</p>
+                            <!-- <div class="like-comment-readmore">
+                                
+                                <a href="#" class="comments"><i class="fa fa-comments-o"></i> 49</a>
+                                <a class="read-more" href="#">Read More</a>
+                            </div> --> <!-- /.like-comment-readmore -->
+                        </div>
+                    </section> <!-- /#featured-world-news -->
+
+
+                    <ul class="col-md-6">
+                        <li ng-repeat="post in section.posts"
+                        ng-if="$index > 0 && $index < 5"
+                        >
+                        <div class="media">
+                          <div class="media-left media-middle">
+                            <a href="#">
+                              <img class="media-object" ng-src="{{post.image}}" alt="{{post.title}}" style="width: 128px;">
+                            </a>
+                          </div>
+                          <div class="media-body">
+                            <h4 class="media-heading">{{post.title}}</h4>
+                            <i class="glyphicon glyphicon-time"> {{post.published_at | date : 'd/M/yy'}}</i>
+                          </div>
+                        </div>
+                            
+                                
+                        </li>
+                        
+                    </ul>
+                    </div>
+                </section> <!-- / #ccr-world-news -->
+
+
+
+
+                <section class="bottom-border"></section>
+
+
+
+
+
+
+
+
+
