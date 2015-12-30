@@ -1,0 +1,99 @@
+.slide-element img{
+    width: 648px;
+    height: 395px;
+    overflow: hidden;
+    display: block;
+
+}
+
+.featured-sports-news-img{
+    width: 380px;
+    height: 235px;
+    overflow: hidden;
+    display: block;
+        background: #eee;
+    /* Internet Explorer 10 */
+    display:-ms-flexbox;
+    -ms-flex-pack:center;
+    -ms-flex-align:center;
+
+    /* Firefox */
+    display:-moz-box;
+    -moz-box-pack:center;
+    -moz-box-align:center;
+
+    /* Safari, Opera, and Chrome */
+    display:-webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+
+    /* W3C */
+    display:box;
+    box-pack:center;
+    box-align:center;
+}
+.section-thumbnail{
+    width: 178px;
+    height: 110px;
+    overflow: hidden;
+    display: block;
+    background: #eee;
+    /* Internet Explorer 10 */
+    display:-ms-flexbox;
+    -ms-flex-pack:center;
+    -ms-flex-align:center;
+
+    /* Firefox */
+    display:-moz-box;
+    -moz-box-pack:center;
+    -moz-box-align:center;
+
+    /* Safari, Opera, and Chrome */
+    display:-webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+
+    /* W3C */
+    display:box;
+    box-pack:center;
+    box-align:center;
+}
+.sidebar-image{
+    width: 65px;
+    height: 40px;
+    overflow: hidden;
+    display: block;
+    background: #eee;
+    /* Internet Explorer 10 */
+    display:-ms-flexbox;
+    -ms-flex-pack:center;
+    -ms-flex-align:center;
+
+    /* Firefox */
+    display:-moz-box;
+    -moz-box-pack:center;
+    -moz-box-align:center;
+
+    /* Safari, Opera, and Chrome */
+    display:-webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+
+    /* W3C */
+    display:box;
+    box-pack:center;
+    box-align:center;
+
+    float: left;
+    margin-right: 8px;
+}
+.sidebar-image img{
+    float: none!important;
+}
+
+.carousel-control.right{
+    right: 15px;
+}
+.carousel-control.left{
+    left: 15px;
+}
