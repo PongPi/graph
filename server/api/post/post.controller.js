@@ -7,16 +7,17 @@ var Tag = require('../tag/tag.model');
 
 // Get list of posts
 exports.index = function(req, res) {
-  Tag.fetchAll({withRelated: [{
+  Tag.query(function (qb) {
+      qb.whereNull('tags.parent_id')
+      .orderBy('priority', 'asc')
+    }).fetchAll({withRelated: [{
                 'posts': function(qb) {
                   qb.innerJoin('users', function () {
                       this.on('posts.author_id', '=', 'users.id')
                   }).select('posts.*','users.name as author_name');
-                  //qb.limit(20);
-                  //qb.offset(0);
                   qb.orderBy('published_at', 'desc');
                 }
-  }]}).then(function (tags) {
+  },'childrens']}).then(function (tags) {
     var sections = [];
     var recents = [];
     var tag_arr = tags.toArray()
@@ -65,7 +66,8 @@ function latestPost (callback) {
 
 // Get list of posts
 exports.category = function(req, res) {  
-  console.log('category', req.query.category);
+  console.log('====================== category', req.query.category, req.query.length);
+
   new Tag({'slug':req.query.category})
   .fetch({withRelated: [{
                 'posts': function(qb) {
@@ -73,8 +75,8 @@ exports.category = function(req, res) {
                       this.on('posts.author_id', '=', 'users.id')
                   }).select('posts.*','users.name as author_name');
                   qb.orderBy('published_at', 'desc');
-                  qb.limit(10);
-                  qb.offset(0);
+                  qb.limit(10);//parseInt(req.query.offset) || 0
+                  qb.offset(parseInt(req.query.length)||0);
                 }
   }]}).then(function (tag) {
     latestPost(function (error, posts) {
@@ -101,6 +103,27 @@ exports.aside = function(req, res) {
     return handleError(res, err);
   });
 
+};
+exports.footer = function(req, res) {
+
+  Tag.fetchAll().then(function (tags) {
+      Post
+        .fetchAll({withRelated: ['tags','author']})
+        .then(function (posts) {
+          var chunk_media = _.chunk(posts.toArray(),5);
+          return res.status(200).json({
+            'hot_news':  chunk_media[0], 
+            'old_news':  chunk_media[1],
+            'tags':  tags
+          });
+        }).catch(function(err) {
+          console.log(err)
+          return handleError(res, err);
+        });
+  }).catch(function(err) {
+    console.log(err)
+    return handleError(res, err);
+  }); 
 };
 function sameTag (tag_id,callback) {
   Post.query(function(qb) {
@@ -135,6 +158,9 @@ exports.show = function(req, res) {
   }  
   if(req.params.id === 'aside'){
     return exports.aside(req, res);
+  }    
+  if(req.params.id === 'footer'){
+    return exports.footer(req, res);
   }  
   if(req.params.id === 'category'){
     return exports.category(req, res);

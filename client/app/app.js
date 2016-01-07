@@ -6,7 +6,7 @@ var go1636app = angular.module('graphNewsApp', [
         'ngSanitize',
         'ngRoute',
         'ngAnimate',
-        'ui.bootstrap',
+        // 'ui.bootstrap',
         'angular-loading-bar',
         'ui.select',
         'ngFileUpload',
@@ -101,4 +101,42 @@ function activeMenu($rootScope, $location) {
     //         $rootScope.title = "My Progress";
     // }
 
+}
+$(function() {
+    resizelayout();
+});
+
+
+function resizelayout () {
+  function resizeLeftSection () {
+    if( $(window).width() >= 1170){
+      var right   = $('#ccr-right-section').width();
+      var padding = 15;//parseInt($('#ccr-left-section').css('padding-right'));
+      var parent  = $('#ccr-left-section').parent().width();
+      console.log(parent,padding,right)
+      $('#ccr-left-section').width(parent-padding-right);
+    }else{
+      $('#ccr-left-section').width('auto');
+    }
+  }  
+
+  function resizeCarouselSlide () {
+    if( $(window).width() >= 1170){
+      var right   = $('#banner-wide-skyscraper').width();
+      var padding = 40;//parseInt($('#ccr-left-section').css('padding-right'));
+      var parent  = $('#carousel-slide').width();
+      console.log('resizeCarouselSlide',parent,padding,right)
+      $('#carousel-slide-main').width(parent-padding-right);
+    }else{
+      $('#carousel-slide-main').width('auto');
+    }
+  }
+
+  $( window ).resize(function() {
+    resizeLeftSection();
+    resizeCarouselSlide();
+  });
+
+  resizeLeftSection();
+  resizeCarouselSlide();
 }

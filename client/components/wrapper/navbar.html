@@ -57,7 +57,9 @@
 
         <div class="collapse navbar-collapse ccr-nav-main">
           <ul class="nav navbar-nav">
-            <li><a class="active" href="index.html">HOME</a></li>            
+          <li><a class="active" href="/" class="text-uppercase">HOME</a></li>
+          <li ng-repeat="tag in tags"><a  href="/{{tag.slug}}.html" class="text-uppercase">{{tag.name}}</a></li>
+            <!-- <li><a class="active" href="index.html">HOME</a></li>            
             <li><a class="active" href="index.html">TIN SAO</a></li>
             <li><a class="active" href="index.html">XEM</a></li>
             <li><a class="active" href="index.html">NHẠC</a></li>
@@ -68,12 +70,12 @@
             <li><a class="active" href="index.html">THỂ THAO</a></li>
             <li><a class="active" href="index.html">XÕA</a></li>
             <li><a class="active" href="index.html">HỌC</a></li>
-            <li><a class="active" href="index.html">12 CHÒM SAO</a></li>
+            <li><a class="active" href="index.html">12 CHÒM SAO</a></li> -->
           </ul> <!-- /  .nav -->
         </div><!-- /  .collapse .navbar-collapse  -->
 
         <div id="currentTime" class="pull-right current-time">
-          <i class="fa fa-clock-o"></i> 12:10 pm
+          <i class="fa fa-clock-o"></i> {{'' | currentTime}}
 
 
         </div><!-- / #currentTime -->

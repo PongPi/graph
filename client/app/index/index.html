@@ -1,5 +1,5 @@
 <div class="ccr-last-update">
-    <div class="update-ribon">TIN MỚi</div> <!-- /.update-ribon -->
+    <div class="update-ribon" >TIN MỚi</div> <!-- /.update-ribon -->
     <span class="update-ribon-right"></span> <!-- /.update-ribon-left -->
     <div class="update-news-text" id="update-news-text">
             <ul id="latestUpdate">  
@@ -10,9 +10,9 @@
     <div class="update-right-border"></div> 
     <!-- /.update-right-border -->
 </div> <!-- / .ccr-last-update -->
-<div class="row">
-    <div class="col-md-10">
-        <section id="ccr-slide-main" class="carousel slide" data-ride="carousel"> 
+<div class="row" id="carousel-slide">
+    <div class="col-md-12" id="carousel-slide-main">
+        <section id="ccr-slide-main" class="carousel slide"  data-ride="carousel"> 
             <!-- Carousel items -->
             <div class="carousel-inner">
                 <div class=" item" ng-repeat="recent in recents" ng-class="{'active': $index === 0}" ng-if="$index < 4">
@@ -24,8 +24,8 @@
             </div> <!-- /.carousel-inner -->
 
             <!-- slider nav -->
-            <a class="carousel-control left" href="#ccr-slide-main" data-slide="prev"><i class="fa fa-arrow-left"></i></a>
-            <a class="carousel-control right" href="#ccr-slide-main" data-slide="next"><i class="fa fa-arrow-right"></i></a>
+            <a class="carousel-control left" data-target="#ccr-slide-main" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+            <a class="carousel-control right" data-target="#ccr-slide-main" data-slide="next"><i class="fa fa-angle-right"></i></a>
 
             <ol class="carousel-indicators">
                 <li data-target="#ccr-slide-main" data-slide-to="0" class="" ng-repeat="recent in recents" ng-class="{'active': $index === 0}" ng-if="$index < 4">{{$index}}</li>                        
@@ -54,11 +54,22 @@
             
         </ul>
     </div>
+    <div id="banner-wide-skyscraper" class="col-md-2">
+        <div 
+
+ng-repeat="ad in ads"
+style="width:{{ad.width}}px;height:{{ad.height}}px;display: block;margin-bottom:10px;"
+>
+  <div ng-bind-html="ad.html | to_trusted">
+    
+  </div>
+</div>
+    </div>
 </div>
 <section class="ccr-sports-gallery" ng-repeat="section in sections">
         <div class="ccr-gallery-ttile">
                 <span></span> 
-                <p><a href="/{{section.slug}}.html">{{section.name}}</a></p>
+                <p><a href="/{{section.slug}}.html" class="text-uppercase">{{section.name}}</a></p>
         </div> <!-- .ccr-gallery-ttile -->
         <div class="row">
         <section class="featured-sports-news col-md-6">

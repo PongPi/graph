@@ -1,0 +1,1 @@
+ALTER TABLE `tags` ADD `priority` INT NOT NULL DEFAULT '0' AFTER `updated_by`;

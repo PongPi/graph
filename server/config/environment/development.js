@@ -14,5 +14,5 @@ module.exports = {
         database : 'graph-dev-2',
         charset  : 'UTF8_BIN'
     },
-	// seedDB: true
+	seedDB: true
 }

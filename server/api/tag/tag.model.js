@@ -3,7 +3,7 @@
 var Model = require('../../config/model');
 var checkit  = require('checkit');
 var Promise  = require('bluebird');
-var Post = require('../post/post.model');
+// var Post = require('../post/post.model');
 // var bcrypt   = Promise.promisifyAll(require('bcrypt'));
 
 var rules = {
@@ -15,7 +15,16 @@ var Tag = Model.extend({
     idAttribute: 'id',
 
     posts: function() {
+        var Post = require('../post/post.model');
         return this.belongsToMany(Post);
+    },
+    parents: function() {
+        var Tag = require('../tag/tag.model');
+        return this.belongsToMany(Tag, 'parent_id');
+    },    
+    childrens: function() {
+        var Tag = require('../tag/tag.model');
+        return this.hasMany(Tag, 'parent_id');
     }
 })
 

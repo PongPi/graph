@@ -3,7 +3,7 @@
 var Model = require('../../config/model');
 var checkit  = require('checkit');
 var Promise  = require('bluebird');
-var User = require('../account/account.model');
+
 
 
 var rules = {
@@ -26,6 +26,7 @@ var Post = Model.extend({
         return this.belongsToMany(require('../tag/tag.model'));
     },
     author: function() {
+        var User = require('../account/account.model');
         return this.belongsTo(User,'author_id');
     },
     virtuals: {

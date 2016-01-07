@@ -5,10 +5,20 @@ var Tag = require('./tag.model');
 
 // Get list of tags
 exports.index = function(req, res) {
-  Tag.find(function (err, tags) {
-    if(err) { return handleError(res, err); }
-    return res.status(200).json(tags);
-  });
+  Tag.forge()
+    .query(function (qb) {
+      qb.whereNull('tags.parent_id')
+      .orderBy('priority', 'asc')
+    })
+    .fetchAll({withRelated:['childrens']})
+    .then(function (collection) {
+      return res.status(200).json(collection)
+      // res.json({error: false, data: collection.toJSON()});
+    })
+    .catch(function (err) {
+      return handleError(res, err);
+      // res.status(500).json({error: true, data: {message: err.message}});
+    });
 };
 
 // Get a single tag

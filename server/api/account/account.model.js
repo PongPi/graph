@@ -3,7 +3,7 @@
 var Model = require('../../config/model');
 var checkit  = require('checkit');
 var Promise  = require('bluebird');
-var Post = require('../post/post.model');
+
 // var bcrypt   = Promise.promisifyAll(require('bcrypt'));
 
 var rules = {
@@ -21,6 +21,7 @@ var User = Model.extend({
         return checkit(rules).run(this.attributes);
     },
     posts: function() {
+        var Post = require('../post/post.model');
         return this.hasMany(Post);
     }
 })

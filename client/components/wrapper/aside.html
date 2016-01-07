@@ -32,3 +32,13 @@
     </div>
   </li>
 </ul>
+
+<div 
+
+ng-repeat="ad in ads"
+style="width:{{ad.width}}px;height:{{ad.height}}px;display: block;margin-bottom:10px;"
+>
+  <div ng-bind-html="ad.html | to_trusted">
+    
+  </div>
+</div>

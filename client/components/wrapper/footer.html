@@ -1,8 +1,85 @@
-<div class="page-footer">
-    <div class="page-footer-inner">
-         
+<aside id="ccr-footer-sidebar">
+    <div class="container">
+
+        <ul>
+            <li class="col-md-3">
+                <h5 class="text-uppercase">Giới Thiệu</h5>
+                <div class="about-us">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, quod, nostrum, corrupti, maxime quis doloribus debitis id consectetur laudantium iure aperiam soluta consequuntur modi accusamus molestias. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, quod, nostrum, corrupti, maxime quis doloribus debitis id consectetur laudantium iure aperiam soluta consequuntur modi accusamus molestias Ab veniam atque eius...
+                </div>
+                <div class="site-logo">
+                    <a href="/"><h1>Graph<span>News</span></h1></a>
+                </div> <!-- / .navbar-header -->
+                
+            </li>
+            <li class="col-md-3">
+                <h5>TIN HOT</h5>
+                <ul class="media-list mt-10">
+                  <li class="media" ng-repeat="post in hot_news" >
+                    <div class="media-left media-middle">
+                      <a href="{{post.url}}">
+                        <img class="media-object" ng-src="{{post.image}}" alt="{{post.title}}" style="width:64px">
+                      </a>
+                    </div>
+                    <div class="media-body">
+                      <p class="media-heading"><a href="{{post.url}}">{{post.title}}</a></p>
+                    </div>
+                  </li>
+                </ul>
+                
+            </li>
+            <li class="col-md-3">
+                <h5 class="text-uppercase">BẠN ĐỌC CHƯA</h5>
+                <ul class="media-list mt-10">
+                  <li class="media" ng-repeat="post in old_news" >
+                    <div class="media-left media-middle">
+                      <a href="{{post.url}}">
+                        <img class="media-object" ng-src="{{post.image}}" alt="{{post.title}}" style="width:64px">
+                      </a>
+                    </div>
+                    <div class="media-body">
+                      <p class="media-heading"><a href="{{post.url}}">{{post.title}}</a></p>
+                    </div>
+                  </li>
+                </ul>
+                
+            </li>
+            <li class="col-md-3">
+                <h5 class="text-uppercase">Tags</h5>
+                <div class="tagcloud">
+                    <a ng-repeat="tag in tags" href="/{{tag.slug}}.html">{{tag.name}}</a>
+                </div>
+                
+            </li>
+        </ul>
     </div>
-    <div class="scroll-to-top">
-        <i class="icon-arrow-up"></i>
-    </div>
-</div>
+    
+</aside> <!-- /#ccr-footer-sidebar -->
+
+
+<footer id="ccr-footer">
+    <div class="container">
+        <div class="copyright">
+            Graph News
+        </div> <!-- /.copyright -->
+
+        <div class="footer-social-icons">
+            <ul>
+                <li>
+                    <a href="#"  class="google-plus"><i class="fa fa-google-plus"></i></a>
+                </li>
+                <li >
+                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li >
+                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li >
+                    <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                </li>
+            </ul>
+            
+        </div><!--  /.cocial-icons -->
+
+    </div> <!-- /.container -->
+</footer>  <!-- /#ccr-footer -->
